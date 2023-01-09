@@ -1,21 +1,23 @@
 <!-- <hr style="margin: 16px 0px 16px 0px" /> -->
 <!-- <script
-  id="diffblog-plugin-script"
-  async="false"
-  src="https://diff.blog/static/js/diffblog_plugin_v1.js"
+id="diffblog-plugin-script"
+async="false"
+src="https://diff.blog/static/js/diffblog_plugin_v1.js"
 ></script>
 <script>
-  document
-    .getElementById("diffblog-plugin-script")
-    .addEventListener("load", function () {
-      DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
-    });
-</script> -->
-<script
+document
+.getElementById("diffblog-plugin-script")
+.addEventListener("load", function () {
+DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
+});
+</script> --><script
   src="https://utteranc.es/client.js"
   repo="robi24/robi24.github.io"
   issue-term="pathname"
   theme="github-light"
   crossorigin="anonymous"
-  async
-></script>
+  async> </script>
+
+{% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include analytics.html %}
+{% endif %}
