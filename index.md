@@ -6,6 +6,6 @@ layout: home
 
 Are you a bit worn too? Go grab a drink, sit down comfortably and enjoy ☕
 
-{% if jekyll.environment == 'production' and site.google_analytics %}
+{% if jekyll.environment == 'production' %}
     {% include analytics.html %}
 {% endif %}
