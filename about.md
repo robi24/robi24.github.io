@@ -13,6 +13,6 @@ You can find me on [github][github-link] and reach via <robi@bitwornhat.com>
 [coffee-link]: https://www.buymeacoffee.com/robi24
 [github-link]: https://github.com/robi24
 
-{% if jekyll.environment == 'production' and site.google_analytics %}
+{% if jekyll.environment == 'production' %}
     {% include analytics.html %}
 {% endif %}
