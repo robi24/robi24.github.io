@@ -21,8 +21,8 @@
 title: A bit worn hat 👒
 email: robi@bitwornhat.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi, I'm a bit worn 👒 This is my personal blog to share all the interesting stuff!
-  Is't going to be a mix of programming, linux, electronics, hacking ☠ and whatever I find interesting 🍻 
+  Hi, I'm a bit worn 👒 This is my personal blog to share all the interesting stuff! And I write it myself, no AI involved 🤯
+  It's going to be a mix of programming, linux, electronics, hacking ☠ and whatever I find interesting 🍻 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bitwornhat.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
