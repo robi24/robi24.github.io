@@ -48,7 +48,7 @@ The output should be similar to this one
 index.android.bundle: Hermes JavaScript bytecode, version 90
 ```
 
-`version` may wary depending on the app and which react native version it uses. [Hermes](https://reactnative.dev/docs/hermes) is an engine. You can enable/disable it when you develop a RN app. It should improve the startup time and memory consumtion. I wonder what would be an output if we disable `hermes`. Feel free to test that and let me know down in the comments :)
+`version` may wary depending on the app and which react native version it uses. [Hermes](https://reactnative.dev/docs/hermes) is an engine. You can enable/disable it when you develop a RN app. It should improve the startup time and memory consumtion. I wonder what would be an output if we disable `hermes`. Feel free to test that and let me know down in the comments 🙂
 
 Anyway, now it's time to look a tool, or more precisely, a decompiler which can output something more useful than this mess. Take a look at [hermes-dec](https://labs.p1sec.com/2023/01/09/releasing-hermes-dec-an-open-source-disassembler-and-decompiler-for-the-react-native-hermes-bytecode/). Github link [here](https://github.com/P1sec/hermes-dec). Btw, don't forget to leave a star (it's free!). Follow the docs, clone the repo and run
 
@@ -56,9 +56,9 @@ Anyway, now it's time to look a tool, or more precisely, a decompiler which can 
 ./hermes-dec/hbc_decompiler.py ./app/assets/index.android.bundle file_output.js 
 ```
 
-what you get in `file_output.js` is a decompiled version of a bundle file. Go and explore it! Don't expect to have a nice and clean code. What's going to be inside is much better, but function/variable names like `a,b,c,d,e,..` doesn't help. I can give you the last advice. Check the app you just decompiled and looks for keywords/strings near data which you want to get. For example you may want a data from a certan screen, but this screen comes with a header/title at the very top like "How to spot summer clouds?". Looks for it :) Searching for some logic may start the same (popup blocking a "premium"? hehe), but it's going to be a little bit harder to find :)
+what you get in `file_output.js` is a decompiled version of a bundle file. Go and explore it! Don't expect to have a nice and clean code. What's going to be inside is much better, but function/variable names like `a,b,c,d,e,..` doesn't help. I can give you the last advice. Check the app you just decompiled and looks for keywords/strings near data which you want to get. For example you may want a data from a certan screen, but this screen comes with a header/title at the very top like "How to spot summer clouds?". Looks for it 🙂 Searching for some logic may start the same (popup blocking a "premium"? hehe), but it's going to be a little bit harder to find 🙂
 
-To sum things up, I personally use this to check if app data is pulled from some kind of server or just hardcoded in the app. It may be faster than tunneling your network data (which is usually encrypted anyway) via `Burp` or similar tool, especially if you don't do that every day. Sometimes you can find a hardcoded array of data, or just a plain `json` file in a `raw` folder :) Have fun plaing!
+To sum things up, I personally use this to check if app data is pulled from some kind of server or just hardcoded in the app. It may be faster than tunneling your network data (which is usually encrypted anyway) via `Burp` or similar tool, especially if you don't do that every day. Sometimes you can find a hardcoded array of data, or just a plain `json` file in a `raw` folder 🙂 Have fun plaing!
 
 [apk-dow-guide]: https://apktool.org/docs/install
 [apktool-download]: https://bitbucket.org/iBotPeaches/apktool/downloads/
