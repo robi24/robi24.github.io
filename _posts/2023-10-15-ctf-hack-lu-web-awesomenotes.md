@@ -9,7 +9,9 @@ permalink: /posts/ctf-hack-lu-web-awesomenotes
 ## Awesomenotes 1
 
 CTF name: **[Hack.lu CTF 2023](https://flu.xxx/info)**
+
 Challenge name: **Awesomenotes 1**
+
 Challenge description:
 
 ```text
@@ -17,7 +19,9 @@ We're excited to announce our new, revolutionary product: A note-taking app. Thi
 ```
 
 Challenge category: **web**
+
 Challenge points: **88**
+
 When: **Fri, Oct. 13, 18:00 — Sun, Oct. 15, 18:00 UTC**
 
 ### TLDR - solution
@@ -43,6 +47,7 @@ When: **Fri, Oct. 13, 18:00 — Sun, Oct. 15, 18:00 UTC**
 ### Description
 
 ![Alt text](/assets/images/2023-10-15/image-4.png)
+
 Challenge was marked as **beginner friendly**. You're greet with a simple web page where you can create and report a `note`.
 
 ![Alt text](/assets/images/2023-10-15/image-8.png)
