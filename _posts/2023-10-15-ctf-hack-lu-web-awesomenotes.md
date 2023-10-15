@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hack.lu CTF - "Awesomenotes 1" web challenge writeup"
-date: 2023-10-15 22:40:00 +0100
+title: "Hack.lu CTF Awesomenotes 1 web challenge writeup"
+date: 2023-10-15 21:30:00 +0100
 categories: ctf web security writeup htmx
-permalink: /posts/ctf-hack-lu-awesomenotes
+permalink: /posts/ctf-hack-lu-web-awesomenotes
 ---
 
 ## Awesomenotes 1
