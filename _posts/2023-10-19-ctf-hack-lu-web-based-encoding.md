@@ -44,8 +44,9 @@ print(result.hex())
 
 Challenge was marked as **beginner friendly**. You're greet with a login page. After signing up you get an access to list, create and report (to admin) _encodings_
 
-| ![login page](/assets/images/2023-10-19/image.png) | ![create encoding](/assets/images/2023-10-19/t1.png) | ![view encoding](/assets/images/2023-10-19/t2.png) | ![list all encodings](/assets/images/2023-10-19/t3.png) |
+| login                                              | create                                               | view                                               | list                                                    |
 | -------------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------- |
+| ![login page](/assets/images/2023-10-19/image.png) | ![create encoding](/assets/images/2023-10-19/t1.png) | ![view encoding](/assets/images/2023-10-19/t2.png) | ![list all encodings](/assets/images/2023-10-19/t3.png) |
 
 After checking the source code and `view_encoding.html` file we can see that it's vulnerable to XSS
 
