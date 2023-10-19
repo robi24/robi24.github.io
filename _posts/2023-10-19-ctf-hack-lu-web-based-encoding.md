@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hack.lu CTF based encoding web challenge writeup"
-date: 2023-10-15 22:30:00 +0100
+date: 2023-10-19 07:30:00 +0100
 categories: ctf web security writeup htmx
 permalink: /posts/ctf-hack-lu-web-based-encoding
 ---
