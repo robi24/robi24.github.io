@@ -8,7 +8,7 @@ permalink: /posts/zsh-bira-theme-custom-prompt
 
 [TLDR](#tldr) below 😄
 
-It's a new year, so I decided to try a few new things. I was thinking a lot about switching to macos for a while so I decided it's finally time to give it a try. I feel sad leaving majaro liniux, I think it's an amazing distro with everything you may want for your everyday tasks. I'll keep it on my private laptop though. So, macos for work and manjaro for everything else, it's been decided 😉
+It's a new year, so I decided to try a few new things. I was thinking a lot about switching to macos so I decided it's finally time to give it a try. I feel sad leaving majaro liniux, I think it's an amazing distro with everything you may want for your everyday tasks. I'll keep it on my private laptop though. So, macos for work and manjaro for everything else, it's been decided 😉
 
 What I realized after I got a macbook from my company it's how custom my linux setup was. I promise to write the ultimate manjaro -> macos switching tutorial at some point, but I'm still learning it!
 
@@ -32,17 +32,17 @@ Or at least that's what they claim in this article! What would be the result for
 
 ![echo PS1 result](/assets/images/2024-01-06/image.png)
 
-As you can see, it's much more complicated. It contains some ruby, git configs, line break and more. We're interested in the `%n` which represents `$USERNAME` and `%m` - hostname. This and many more variables are pretty well documented in the [zsh prompt expansion][zsh prompt expansion] docs. So let's try to replace this value with some string!
+As you can see, it's much more complicated. It contains some ruby, git configs, line break and more. We're interested in the `%n` which represents `$USERNAME` and `%m` - hostname. These and many more variables are pretty well documented in the [zsh prompt expansion][zsh prompt expansion] docs. So let's try to replace this value with some custom string!
 
 ![customized PS1 in zsh](/assets/images/2024-01-06/image-4.png)
 
-And if you didn't forget to wrap the variable in `""` you should get something like this. There's just one issue. **Where are the colors?!** 😱 See this green bar, it's now white, but it's not only that, we've also lost the folder colors. This is awful, how can someone use it? 🤮 We went this far so there's no way back, we can't give up. Googling time!
+And if you didn't forget to wrap the variable in `""` you should get something like this. There's just one issue. **Where are the colors?!** 😱 See this green bar, it's now white, but it's not only that, we've also lost the folder colors. This is awful 🤢 We went this far, and still, we need more googling!
 
 I was really close to start reading the official [zsh docs][zsh docs]. As a side note, I also found this very nice [zsh intro][zsh intro]. This was the moment when I thought, _why not look at the theme itself_? And [here it is][bira theme], my lovely bira theme! And what we've got here, the `PROMPT` variable and  the`user_host`!
 
 ![bira config from github](/assets/images/2024-01-06/image-5.png)
 
-We can now fork this config and create our custom theme with the `user_host` replaced 🎉, but wait, wait. We're a bit too lazy for that, aren't we? Why not copy-pasting these two lines to to our `.zshrc` file? It's just a config, isn't it? Should work out of the box, am I right? 🤔 Let's add these two lines at the very end of our zsh config file
+We can now fork this config and create our custom theme with the `user_host` replaced 🎉, but wait, wait, not so fast. We're a bit too lazy for that, aren't we? Why not copy-pasting these two lines to to our `.zshrc` and see what happens? It's just a config, isn't it? Should work out of the box, am I right? 🤔 Let's add these it at the very end of the file
 
 ```bash
 local user_host="%B%(!.%{$fg[red]%}.%{$fg[green]%})buy@me-aCoffee%{$reset_color%} "
@@ -50,17 +50,17 @@ PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
 ╰─%B${user_symbol}%b "
 ```
 
-and we've got it! Fully coloured, and no custom theme needed 🎉
+and we've got it! Fully coloured, and no custom theme 🎉
 
 ![Alt text](/assets/images/2024-01-06/image-6.png)
 
-Last thing to do, we've changed the cli prop, but we also need to change the very top terminal title which still includes my name and surname.
+There's last thing to do. We've changed the cli prop, but we also need to change the very top terminal title which still includes my name and surname.
 
 I started changing the title in the `Terminal->Settings->Profiles->Window->Title`, but this title was overwritten straightway, every time I opened a new Terminal window.
 
 ![macos Terminal settings](/assets/images/2024-01-06/image-8.png)
 
-Did you know you can open the terminal inspector via `command + shift + I`? I did not till now! Sadly, it was pointless, because the `title` was automatically updated back to what it was after I entered the first `cd` command. What a pain in the ass!
+Did you know you can open the terminal inspector via `command + shift + I`? I didn't up until now! Sadly, it was pointless, because the `title` was automatically updated back to what it was after I entered the first `cd` command. What a pain in the ass!
 
 ![Terminal inspector](/assets/images/2024-01-06/image-9.png)
 
@@ -75,7 +75,7 @@ Wonderful, so all it's left is to turn off your terminal or type `source ~/.zshr
 
 #### <a id="tldr"></a> TLDR
 
-1. To remove macos Terminal title auto update by zsh, uncomment `DISABLE_AUTO_TITLE` from your `.zshrc` file
+1. To disable macos Terminal title auto update by zsh, uncomment `DISABLE_AUTO_TITLE` from your `.zshrc` file
 
 2. To change zsh cli prompt title add these two lines to your `.zshrc` file
 
