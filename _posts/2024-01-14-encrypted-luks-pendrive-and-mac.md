@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mounting encrypted LUKS kingston pendrive on macos"
-date: 2024-01-12 18:00:00 +0100
+date: 2024-01-14 18:00:00 +0100
 categories: luks macos linsk tips hacks
 permalink: /posts/encrypted-luks-and-macos
 ---
