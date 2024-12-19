@@ -73,7 +73,13 @@ Ahh, and the last one. Don't forget to safely unmount the drive! I got an led wh
 
 #### <a id="tldr"></a> TLDR
 
-Install [luks][luks], it's a small VM which hosts an [AFP][afp] server you use to access your files. Ignore all macos warnings.
+Install [luks][luks], it's a small VM which hosts an [AFP][afp] server to access your files. Ignore all macos warnings.
+
+```bash
+diskutil list # to grab the disk number
+sudo linsk run dev:/dev/disk4 --luks-container vdb1 mapper/cryptcontainer # replace disk4 with your disk number
+# command + K to open finder
+```
 
 [dt2000]: https://media.kingston.com/support/downloads/dt2000_UserManual.pdf
 [snowden]: https://en.wikipedia.org/wiki/Edward_Snowden
