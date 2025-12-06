@@ -20,9 +20,9 @@
 
 title: Bit Worn Hat
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi, I'm a bit worn 👒 This is my personal blog where I share what I find interesting. It may be a mix of programming, linux, electronics, hacking and more. I write everything myself, no AI 😉
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://bitwornhat.com" # the base hostname & protocol for your site, e.g. http://example.com
+  Hi, I'm a bit worn 👒 I'm a human and this is my personal blog where I share what I find interesting. It may be a mix of programming, linux, electronics, hacking and more. I write articles myself 😉
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://bitwornhat.com' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: BitWornHat
 
 # Build settings

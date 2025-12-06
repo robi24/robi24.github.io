@@ -11,11 +11,12 @@ permalink: /posts/encrypted-luks-and-macos
 If you read the previous post you should already know I switched from linux to macos. And I learned a new thing! Back in the day I bought a barely used 8GB [Kingston Data Traveler (DT) 2000][dt2000], very cheaply, to keep my most important files safe and portable. It comes with the build-in keypad, you type your password, plug the stick in and it just works, you can now access you files. It'll wipe your data if you fail to type your password 10 times. I used it for a while, but was bothered by a thought. Would you trust Kingston or any other company with a device they consider _secure_ which you can't even update and their soft isn't open-source? Probably yes, because you're not [Snowden][snowden] 😛 Should be more than enough to keep you files hidden from your grandmother! Btw, don't underestimate your granny 😄 It wasn't enough for my brain though, it was still poking me every now and then, annoying! In the end, I wiped the whole pendrive and encrypted it. I don't remember what I used, probably something which was available via my gui (did I use Ubuntu back in the day?? 😱). I imagine it could be some kind of _encrypt_ checkbox. Fancy encryption FTW. It was enough for my brain to let go 😄 Today, I faced a small issue. I realized that [LUKS][luks] is not supported by macos. They probably have their own _secure_ tools, which I think I trust even less than the Kingston _hardware-based, Full Disk AES 256-bit data encryption in XTS mode_. Fancy marketing. Anyway, I already have encrypted partition inside a hardware encrypted USB stick, and the issue, I can't access my data on macos. Googling time!
 
 I stumbled upon some very neat tool called [linsk][linsk]:
+
 > Linsk is a utility that allows you to access Linux-native file system infrastructure, including LVM and LUKS on Windows and macOS.
 
 I decided to give it a go. I followed the [install manual][links-installation], added missing [qemu][qemu] and [golang][golang] as described in the readme and, finally, `linsk` itself. Time for the [macos manual][links-macos-manual]. Oh, and don't forget to [add golang bin folder to your shell PATH][add-go-to-path].
 
-1. Build 
+1. Build
 
 ```bash
 linsk build
@@ -23,8 +24,7 @@ linsk build
 
 2. Connect the encrypted usb stick, macos will show a waring alert box to ask if you want to mount it. Don't do that! Hit `ignore`. You can read console warning for more info later
 
-![macos alert](/assets/images/2024-01-14/image-3.png)
-
+<img src="/assets/images/2024-01-14/image-3.png" alt="macos alert" width="400">
 
 3. Run the below command to find the path. In my case it's `dev:/dev/disk4`
 
@@ -63,7 +63,7 @@ That's it! Of course after you successfully typed three passwords, first on the 
 
 7. Now, open this `Finder` and hit `Go -> Connect to server`
 
-![finder login to aft login window](/assets/images/2024-01-14/image-6.png)
+<img src="/assets/images/2024-01-14/image-6.png" alt="finder login to aft login window" width="400">
 
 8. Enjoy!
 

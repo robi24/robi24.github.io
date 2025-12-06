@@ -53,7 +53,7 @@ index.android.bundle: Hermes JavaScript bytecode, version 90
 Anyway, now it's time to look a tool, or more precisely, a decompiler which can output something more useful than this mess. Take a look at [hermes-dec](https://labs.p1sec.com/2023/01/09/releasing-hermes-dec-an-open-source-disassembler-and-decompiler-for-the-react-native-hermes-bytecode/). Github link [here](https://github.com/P1sec/hermes-dec). Btw, don't forget to leave a star (it's free!). Follow the docs, clone the repo and run
 
 ```bash
-./hermes-dec/hbc_decompiler.py ./app/assets/index.android.bundle file_output.js 
+./hermes-dec/hbc_decompiler.py ./app/assets/index.android.bundle file_output.js
 ```
 
 what you get in `file_output.js` is a decompiled version of a bundle file. Go and explore it! Don't expect to have a nice and clean code. What's going to be inside is much better, but function/variable names like `a,b,c,d,e,..` doesn't help. I can give you the last advice. Check the app you just decompiled and looks for keywords/strings near data which you want to get. For example you may want a data from a certain screen, but this screen comes with a header/title at the very top like "How to spot summer clouds?". Looks for it 🙂 Searching for some logic may start the same (popup blocking a "premium"? hehe), but it's going to be a little bit harder to find 🙂

@@ -1,0 +1,21 @@
+# Ignore Jekyll build output
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Ignore vendor directory
+vendor/
+
+# Ignore node_modules if using npm
+node_modules/
+
+# Ignore Git
+.git/
+
+# Ignore Gemfile.lock (optional, depends on preference)
+Gemfile.lock
+
+# Ignore files with Liquid templating
+_includes/*.html
+_layouts/*.html
+*.html
