@@ -1,0 +1,192 @@
+/* Dark Mode Styles */
+
+:root {
+  /* Light mode colors */
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --link-color: #2a7ae2;
+  --link-hover-color: #1756a9;
+  --border-color: #e8e8e8;
+  --code-bg-color: #f5f5f5;
+  --code-text-color: #111111;
+  --header-bg-color: #ffffff;
+  --header-text-color: #111111;
+  --post-meta-color: #828282;
+  --blockquote-color: #828282;
+  --blockquote-border-color: #e8e8e8;
+  --table-border-color: #e8e8e8;
+  --table-header-bg: #f0f0f0;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --link-color: #6ab0f3;
+    --link-hover-color: #8fc5f7;
+    --border-color: #333333;
+    --code-bg-color: #2d2d2d;
+    --code-text-color: #e0e0e0;
+    --header-bg-color: #1a1a1a;
+    --header-text-color: #e0e0e0;
+    --post-meta-color: #a0a0a0;
+    --blockquote-color: #a0a0a0;
+    --blockquote-border-color: #333333;
+    --table-border-color: #333333;
+    --table-header-bg: #2d2d2d;
+  }
+}
+
+/* Manual dark mode override */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --link-color: #6ab0f3;
+  --link-hover-color: #8fc5f7;
+  --border-color: #333333;
+  --code-bg-color: #2d2d2d;
+  --code-text-color: #e0e0e0;
+  --header-bg-color: #1a1a1a;
+  --header-text-color: #e0e0e0;
+  --post-meta-color: #a0a0a0;
+  --blockquote-color: #a0a0a0;
+  --blockquote-border-color: #333333;
+  --table-border-color: #333333;
+  --table-header-bg: #2d2d2d;
+}
+
+/* Apply colors to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.site-header {
+  background-color: var(--header-bg-color);
+  border-top-color: var(--border-color);
+  border-bottom-color: var(--border-color);
+}
+
+.site-title,
+.site-title:visited {
+  color: var(--header-text-color);
+}
+
+.site-nav .page-link {
+  color: var(--header-text-color);
+}
+
+.site-nav .page-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Inline code */
+code {
+  background-color: var(--code-bg-color) !important;
+  color: var(--code-text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Code blocks */
+pre {
+  background-color: var(--code-bg-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+pre code {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--code-text-color) !important;
+}
+
+/* Syntax highlighting overrides for dark mode */
+[data-theme="dark"] .highlight,
+[data-theme="dark"] .highlighter-rouge .highlight {
+  background-color: var(--code-bg-color) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight,
+  :root:not([data-theme="light"]) .highlighter-rouge .highlight {
+    background-color: var(--code-bg-color) !important;
+  }
+}
+
+.post-meta {
+  color: var(--post-meta-color);
+}
+
+blockquote {
+  color: var(--blockquote-color);
+  border-left-color: var(--blockquote-border-color);
+}
+
+table {
+  border-color: var(--table-border-color);
+}
+
+table thead {
+  background-color: var(--table-header-bg);
+}
+
+table th,
+table td {
+  border-color: var(--table-border-color);
+}
+
+hr {
+  border-color: var(--border-color);
+}
+
+.site-footer {
+  border-top-color: var(--border-color);
+  background-color: var(--bg-color);
+}
+
+/* Dark mode toggle button in navigation */
+.dark-mode-toggle-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  margin-left: 20px;
+  transition: opacity 0.2s ease;
+  vertical-align: baseline;
+  line-height: 1.5;
+  display: inline;
+}
+
+.dark-mode-toggle-nav:hover {
+  opacity: 0.7;
+}
+
+.dark-mode-toggle-nav:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .site-nav .trigger {
+    display: block;
+  }
+  
+  .dark-mode-toggle-nav {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 0;
+  }
+}
