@@ -2,6 +2,7 @@
 layout: post
 title: "Code OSS and Github Copilot, or any other missing extension"
 date: 2023-04-12 11:00:00 +0100
+last_modified_at: 2024-12-06 14:30:00 +0100
 categories: github manjaro guide
 permalink: /posts/code-oss-and-copilot
 ---
