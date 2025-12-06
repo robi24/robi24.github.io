@@ -19,6 +19,3 @@ Gemfile.lock
 _includes/*.html
 _layouts/*.html
 *.html
-
-# Ignore Markdown files (reference links get broken)
-*.md

@@ -22,8 +22,9 @@
       "files": "*.md",
       "options": {
         "parser": "markdown",
-        "proseWrap": "always",
-        "printWidth": 80
+        "proseWrap": "preserve",
+        "printWidth": 100,
+        "singleQuote": false
       }
     },
     {
