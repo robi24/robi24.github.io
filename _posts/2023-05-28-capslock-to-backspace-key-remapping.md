@@ -12,21 +12,21 @@ Let's start with some intro. I should tell you earlier that you need to use [Xor
 
 1. Open your `X11/xkb/symbols/pc` file with the rights to edit.
 
-    ```bash
-    sudo gedit /usr/share/X11/xkb/symbols/pc
-    ```
+   ```bash
+   sudo gedit /usr/share/X11/xkb/symbols/pc
+   ```
 
 2. Find a `key <CAPS>` part and replace the second part of it with `BackSpace`. That's how this line should look like after editing (reminder: you can update any key you want!).
 
-    ```bash
-    key <CAPS> {[  BackSpace,  BackSpace  ]};
-    ```
+   ```bash
+   key <CAPS> {[  BackSpace,  BackSpace  ]};
+   ```
 
 3. Clean the cache. We can find it under `var/lib/xkb`. The `X` server uses this directory to store the compiled version of the current keymap.
 
-    ```bash
-    sudo rm -rf /var/lib/xkb/*
-    ```
+   ```bash
+   sudo rm -rf /var/lib/xkb/*
+   ```
 
 4. Reboot your system and enjoy your new ⌨ layout!
 

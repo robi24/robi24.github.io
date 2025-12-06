@@ -14,7 +14,7 @@ What I realized after I got a macbook from my company it's how custom my linux s
 
 Today's post is about small terminal update you may be interested to do for yourself. I use [zsh][zsh] combined with [ohmyzsh][ohmyzsh] and only [git][git] plugin enabled. My favorite theme is [bira][bira] one of the default ones. I got my laptop with already configured username which includes my name and surname. I like to work in a coffee shops or cowork spaces and prefer not to have my details displayed on every cli command I type. C'mon, just look at this 🙃
 
-![Terminal screenshot](/assets/images/2024-01-06/image-7.png)
+<img src="/assets/images/2024-01-06/image-7.png" alt="Terminal screenshot" width="500">
 
 Privacy first man! This post should be useful even if you want do make a different modification. I always try to include every step, especially the pointless ones, and as many useful links as possible 🙂
 
@@ -22,25 +22,25 @@ Spoiler alert: we would need to update the window title and the cli prompt separ
 
 Ok, after some googling here and there, I found [this][article1] article. It mentions the `$PS1` variable. This is the value if you `echo` it on the bare `bash`
 
-![ps1 variable in bash](/assets/images/2024-01-06/image-2.png)
+<img src="/assets/images/2024-01-06/image-2.png" alt="ps1 variable in bash" width="220">
 
 And we've got smth like `\s-\v\$`. You can find many more properties, like `\u` - which is username, or `\H` - hour. If you want to apply some settings for the current terminal session then use `export PS1="your_config"`
 
-![export PS1 variable result](/assets/images/2024-01-06/image-1.png)
+<img src="/assets/images/2024-01-06/image-1.png" alt="export PS1 variable result" width="450">
 
 Or at least that's what they claim in this article! What would be the result for my `zsh` config then?
 
-![echo PS1 result](/assets/images/2024-01-06/image.png)
+<img src="/assets/images/2024-01-06/image.png" alt="echo PS1 result">
 
 As you can see, it's much more complicated. It contains some ruby, git configs, line break and more. We're interested in the `%n` which represents `$USERNAME` and `%m` - hostname. These and many more variables are pretty well documented in the [zsh prompt expansion][zsh prompt expansion] docs. So let's try to replace this value with some custom string!
 
-![customized PS1 in zsh](/assets/images/2024-01-06/image-4.png)
+<img src="/assets/images/2024-01-06/image-4.png" alt="customized PS1 in zsh">
 
 And if you didn't forget to wrap the variable in `""` you should get something like this. There's just one issue. **Where are the colors?!** 😱 See this green bar, it's now white, but it's not only that, we've also lost the folder colors. This is awful 🤢 We went this far, and still, we need more googling!
 
-I was really close to start reading the official [zsh docs][zsh docs]. As a side note, I also found this very nice [zsh intro][zsh intro]. This was the moment when I thought, _why not look at the theme itself_? And [here it is][bira theme], my lovely bira theme! And what we've got here, the `PROMPT` variable and  the`user_host`!
+I was really close to start reading the official [zsh docs][zsh docs]. As a side note, I also found this very nice [zsh intro][zsh intro]. This was the moment when I thought, _why not look at the theme itself_? And [here it is][bira theme], my lovely bira theme! And what we've got here, the `PROMPT` variable and the`user_host`!
 
-![bira config from github](/assets/images/2024-01-06/image-5.png)
+<img src="/assets/images/2024-01-06/image-5.png" alt="bira config from github">
 
 We can now fork this config and create our custom theme with the `user_host` replaced 🎉, but wait, wait, not so fast. We're a bit too lazy for that, aren't we? Why not copy-pasting these two lines to to our `.zshrc` and see what happens? It's just a config, isn't it? Should work out of the box, am I right? 🤔 Let's add these it at the very end of the file
 
@@ -52,17 +52,17 @@ PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
 
 and we've got it! Fully coloured, and no custom theme 🎉
 
-![Alt text](/assets/images/2024-01-06/image-6.png)
+<img src="/assets/images/2024-01-06/image-6.png" alt="final result" width="300">
 
 There's last thing to do. We've changed the cli prop, but we also need to change the very top terminal title which still includes my name and surname.
 
 I started changing the title in the `Terminal->Settings->Profiles->Window->Title`, but this title was overwritten straightway, every time I opened a new Terminal window.
 
-![macos Terminal settings](/assets/images/2024-01-06/image-8.png)
+<img src="/assets/images/2024-01-06/image-8.png" alt="macos Terminal settings" width="600">
 
 Did you know you can open the terminal inspector via `command + shift + I`? I didn't up until now! Sadly, it was pointless, because the `title` was automatically updated back to what it was after I entered the first `cd` command. What a pain in the ass!
 
-![Terminal inspector](/assets/images/2024-01-06/image-9.png)
+<img src="/assets/images/2024-01-06/image-9.png" alt="Terminal inspector">
 
 At least we know it's related to the `zsh` and that you can change the terminal title from the cli. I finally found some hints pointing back to the `.zshrc` file. And in this, the holy grail, the commented out `DISABLE_AUTO_TITLE="true"` with some explanation for brainless folks like me
 
