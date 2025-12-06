@@ -20,7 +20,7 @@
 
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme='light']) {
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
     --link-color: #6ab0f3;
@@ -39,7 +39,7 @@
 }
 
 /* Manual dark mode override */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #1a1a1a;
   --text-color: #e0e0e0;
   --link-color: #6ab0f3;
@@ -60,7 +60,9 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 a {
@@ -111,14 +113,14 @@ pre code {
 }
 
 /* Syntax highlighting overrides for dark mode */
-[data-theme="dark"] .highlight,
-[data-theme="dark"] .highlighter-rouge .highlight {
+[data-theme='dark'] .highlight,
+[data-theme='dark'] .highlighter-rouge .highlight {
   background-color: var(--code-bg-color) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .highlight,
-  :root:not([data-theme="light"]) .highlighter-rouge .highlight {
+  :root:not([data-theme='light']) .highlight,
+  :root:not([data-theme='light']) .highlighter-rouge .highlight {
     background-color: var(--code-bg-color) !important;
   }
 }
@@ -181,7 +183,7 @@ hr {
   .site-nav .trigger {
     display: block;
   }
-  
+
   .dark-mode-toggle-nav {
     display: block;
     width: 100%;

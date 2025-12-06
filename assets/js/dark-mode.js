@@ -1,6 +1,6 @@
 // Dark mode toggle functionality
 
-(function() {
+(function () {
   'use strict';
 
   // Check for saved theme preference or default to 'auto'
@@ -38,7 +38,10 @@
     if (toggleButton) {
       if (currentTheme === 'auto') {
         toggleButton.innerHTML = '🌓';
-        toggleButton.setAttribute('aria-label', 'Using system theme (currently ' + effectiveTheme + ')');
+        toggleButton.setAttribute(
+          'aria-label',
+          'Using system theme (currently ' + effectiveTheme + ')'
+        );
         toggleButton.setAttribute('title', 'Auto (System): ' + effectiveTheme);
       } else if (currentTheme === 'dark') {
         toggleButton.innerHTML = '🌙';
@@ -56,7 +59,7 @@
   function toggleTheme() {
     const currentTheme = localStorage.getItem('theme') || 'auto';
     let newTheme;
-    
+
     if (currentTheme === 'light') {
       newTheme = 'dark';
     } else if (currentTheme === 'dark') {
@@ -64,7 +67,7 @@
     } else {
       newTheme = 'light';
     }
-    
+
     localStorage.setItem('theme', newTheme);
     applyTheme(newTheme);
     updateUtterancesTheme(newTheme);
@@ -75,7 +78,7 @@
     const utterancesFrame = document.querySelector('.utterances-frame');
     if (utterancesFrame) {
       let utterancesTheme;
-      
+
       if (theme === 'dark') {
         utterancesTheme = 'github-dark';
       } else if (theme === 'light') {
@@ -85,10 +88,10 @@
         const systemTheme = getSystemTheme();
         utterancesTheme = systemTheme === 'dark' ? 'github-dark' : 'github-light';
       }
-      
+
       const message = {
         type: 'set-theme',
-        theme: utterancesTheme
+        theme: utterancesTheme,
       };
       utterancesFrame.contentWindow.postMessage(message, 'https://utteranc.es');
     }
@@ -98,10 +101,10 @@
   function initTheme() {
     const theme = getThemePreference();
     applyTheme(theme);
-    
+
     // Listen for system theme changes
     if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         const currentTheme = localStorage.getItem('theme') || 'auto';
         if (currentTheme === 'auto') {
           applyTheme('auto');
@@ -120,7 +123,7 @@
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       initTheme();
       setupToggleButton();
     });

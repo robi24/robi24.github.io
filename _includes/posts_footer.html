@@ -13,10 +13,10 @@ DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
 </script> -->
 <script>
   // Set utterances theme based on current theme
-  (function() {
+  (function () {
     var theme = localStorage.getItem('theme') || 'auto';
     var utterancesTheme;
-    
+
     if (theme === 'dark') {
       utterancesTheme = 'github-dark';
     } else if (theme === 'light') {
@@ -29,7 +29,7 @@ DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
         utterancesTheme = 'github-light';
       }
     }
-    
+
     var script = document.createElement('script');
     script.src = 'https://utteranc.es/client.js';
     script.setAttribute('repo', 'robi24/robi24.github.io');
@@ -37,7 +37,7 @@ DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
     script.setAttribute('theme', utterancesTheme);
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
-    
+
     var container = document.getElementById('utterances-container');
     if (container) {
       container.appendChild(script);
@@ -46,6 +46,4 @@ DiffBlog("l1hwfdcilg3r3t2hu2zoqweyod5ktr52272hdhm4rye43zyr1p");
 </script>
 <div id="utterances-container"></div>
 
-{% if jekyll.environment == 'production' %}
-  {% include analytics.html %}
-{% endif %}
+{% if jekyll.environment == 'production' %} {% include analytics.html %} {% endif %}
