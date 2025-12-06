@@ -4,9 +4,14 @@
 layout: home
 ---
 
-<div style="display: flex; align-items: center">
-  <img src="../favicon.ico" alt="logo" width="36" /> Are you a bit worn too? Grab a drink, sit down comfortably and just
-  enjoy your ☕
+<div style="position: relative; margin-top: -8px;">
+  <img src="../favicon.ico" alt="logo" width="56px" style="position: absolute; top: -4px; left: 0;"/>
+  <div style="margin-left: 60px;">
+    Are you a bit worn too? Slow down, grab a drink, sit down comfortably and take your time 🙂
+  </div>
+  <div style="margin-left: 60px;">
+    Did you find something useful or smth you like? Consider supporting me with a small <a href="https://buymeacoffee.com/bitwornhat" rel="noopener noreferrer" target="_blank">coffee</a> ☕ or follow me on <a href="https://twitter.com/BitWornHat" rel="noopener noreferrer" target="_blank">X / Twitter</a>. Thanks!
+  </div>
 </div>
 
 {% if jekyll.environment == 'production' %} {% include analytics.html %} {% endif %}
